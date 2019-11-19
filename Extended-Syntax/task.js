@@ -15,17 +15,18 @@ function calculateQuadraticEquation(){
 function getResult (a,b,c){
 	let dis = Math.pow(b, 2)-4*a*c;
 	let arr = [];
+	
 	if (dis < 0){
-	return [];
+	arr = [];
 	}
-		else if (dis===0){
-			let total = arr.push(-b + Math.sqrt(dis))/ (2*a); 
-			return total;
-		
+		else if (dis == 0){
+			arr = [(-b + Math.sqrt(dis))/(2*a)];
+
 		}
 		else if (dis>0){
-			let total = arr.push((-b + Math.sqrt(dis))/ (2*a),(-b - Math.sqrt(dis))/ (2*a));
-			return total2;
+			arr[0] = (-b + Math.sqrt(dis))/(2*a);
+			arr[1] = (-b - Math.sqrt(dis))/(2*a);
+			return arr;
 		}
 }
 

@@ -14,17 +14,18 @@ function calculateQuadraticEquation(){
 
 function getResult (a,b,c){
 	let dis = Math.pow(b, 2)-4*a*c;
+	let arr = [];
 	if (dis < 0){
 	return [];
 	}
 		else if (dis===0){
-			return [(-b + Math.sqrt(dis))/ (2*a)];
+			let total = arr.push(-b + Math.sqrt(dis))/ (2*a); 
+			return total;
 		
 		}
 		else if (dis>0){
-			let first = (-b + Math.sqrt(dis))/ (2*a);
-			let second = (-b - Math.sqrt(dis))/ (2*a);
-			return[first, second];
+			let total = arr.push((-b + Math.sqrt(dis))/ (2*a),(-b - Math.sqrt(dis))/ (2*a));
+			return total2;
 		}
 }
 
@@ -40,7 +41,7 @@ function getAverageMark(marks){
     let evaluation;
 	if (marks.length > 5) {
 		console.log ("Вы указали больше 5 оценок, максимально допустимо 5 оценок");
-		evaluation = marks.slice(0, 6);
+		evaluation = marks.slice(0, 5);
 		}
 		else {
 			evaluation = marks;

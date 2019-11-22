@@ -1,25 +1,25 @@
 /*-----------1--Задание------------*/
 "use strict"
 function getSolution (a,b,c){
-	let D = b**-4*a*c;
+	let D = b**2-4*a*c;
 	let x1,x2;
 	if (D < 0) {
 	return {D};
 }    
 	  else if (D === 0) {
-		x = -b / (2 * a);
+		x1 = -b / (2 * a);
 	  return { roots: {x1}, D};
 	}
 	  else if (D > 0) {
-		x1 = (-b - Math.sqrt(D)) / (2 * a));
-		x2 = (-b + Math.sqrt(D)) / (2 * a));
+		x1 = (-b - Math.sqrt(D)) / (2 * a);
+		x2 = (-b + Math.sqrt(D)) / (2 * a);
 	  return { roots: {x1, x2}, D};
 	}
 }
 
 function showSolutionsMessage(a,b,c) {
-  let result = getSolutions( a, b, c );
-  console.log(`Вычисляем корни квадратного уравнения ${a}x² + ${b}x + ${c}`);
+  let result = getSolution(a, b, c);
+  console.log(`Вычисляем корни квадратного уравнения ${a}x2 + ${b}x + ${c}`);
   console.log(`Значение дискриминанта: ${result.D}`);
   if(result.D < 0) {
     console.log(`Уравнение не имеет вещественных корней`);
@@ -65,3 +65,24 @@ console.log(getAverageScore(
   french:[4,4]
 }
 ));
+
+/*-----------3--Задание------------*/
+
+function getPersonData(secretData) {
+	function nameOfPirate(num) {
+		let name = num == 1 ? 'Эмильо' : 'Родриго';
+		return name;
+	}
+
+	let result = {};
+
+	result.firstName = nameOfPirate(secretData.aaa);
+	result.lastName = nameOfPirate(secretData.bbb);
+
+	return result;
+}
+
+console.log(getPersonData({aaa: 0, bbb: 0}));
+console.log(getPersonData({aaa: 1, bbb: 0}));
+console.log(getPersonData({aaa: 0, bbb: 1}));
+console.log(getPersonData({aaa: 1, bbb: 1}));

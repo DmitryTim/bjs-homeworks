@@ -8,12 +8,13 @@ class Weapon{
      this.attack = attack
      this.durabuluty = durabuluty
      this.range = range
+	 this.newdurabuluty = durabuluty
    }
 
 
 
   takeDamage(damage){
-    this.durability = this.durability - damage;
+    this.durability = this.newdurabuluty - damage;
     if (this.durability < 0) {
        this.durability = 0
     }

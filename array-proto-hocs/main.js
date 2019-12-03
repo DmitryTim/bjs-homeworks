@@ -18,7 +18,7 @@ function memoize(fn, limit) {
     const checkAviabl = memory.find(x => compareArrays(x.arg, args));
     let resultCalc;
 
-    console.group(`Функция выполнялась ${fn.name} ${++i} раз(a)`);
+    console.log(`Функция выполнялась ${fn.name} ${++i} раз(a)`);
     console.log(memory);
 
     if (checkAviabl === undefined) {
@@ -32,9 +32,8 @@ function memoize(fn, limit) {
       }
     } else {
       let resultCalc = checkAviabl.result;
-      console.log(`Функция вызвана из памяти. Ответ: ${resultCalc}`);
+      console.log(`Функция вызвана из памяти. Ответ: ${checkAviabl.result}`);
     }
-    console.groupEnd();
     return resultCalc;
   };
 }
